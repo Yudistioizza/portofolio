@@ -24,7 +24,7 @@ export const SITE_CONFIG = {
 export const TRANSLATIONS = {
   en: {
     nav: { about: 'About', projects: 'Projects', skills: 'Skills', leadership: 'Leadership', contact: 'Contact', resume: 'Resume', viewResume: 'View Resume', downloadResume: 'Download Resume' },
-    hero: { greeting: 'Hi, I\'m', available: 'Open to Opportunities', scrollHint: 'Scroll', taglineRole: ['DEVELOPER', 'ENGINEER', 'BUILDER', 'CREATOR'] },
+    hero: { greeting: 'Hi, I\'m', available: 'Open to Opportunities', scrollHint: 'Scroll', taglineRole: ['ANALYST', 'ENGINEER', 'CREATOR'] },
     about: { eyebrow: 'Get to know me', title: 'About Me', backgroundTitle: 'Background', experienceTitle: 'Experience',
       bio1: "I'm a backend-focused fullstack developer with a passion for building scalable web systems. My experience spans enterprise applications at state-owned companies to freelance projects.",
       bio2: "Currently completing my Informatics degree at UNSIKA while actively learning to integrate AI capabilities into modern web applications. Strong leadership background across academic and community organizations." },
