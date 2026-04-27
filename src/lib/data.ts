@@ -11,11 +11,11 @@ export const SITE_CONFIG = {
   },
   socials: {
     linkedin: 'https://linkedin.com/in/yudistioizza',
-    github: 'https://github.com/yudistioizza',
+    github: 'https://github.com/Yudistioizza',
   },
   assets: {
-    photo: '/foto.jpg',
-    cv: '/CV-Yudistio-Izza-Al-Farisi.pdf',
+    photo: '/foto.jpeg',
+    cv: '/Yudistio Izza Al Farisi_CV.pdf',
   },
   status: { available: true, lookingFor: ['Full-Stack Developer', 'Backend Developer', 'Web Developer'] },
 } as const;
