@@ -28,7 +28,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="section-pad" style={{ background: 'var(--bg)' }}>
+    <section id="about" ref={sectionRef} className="section-pad" style={{ background: 'var(--bg-alt)' }}>
       <div className="container-main">
         <div className="about-top" style={{ marginBottom: '3.5rem' }}>
           <div className="eyebrow" style={{ marginBottom: '0.75rem' }}><span className="eyebrow-bar" />{t.about.eyebrow}</div>
@@ -37,27 +37,37 @@ export function About() {
           </h2>
         </div>
 
-        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3.5rem', alignItems: 'start' }}>
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '1rem', alignItems: 'start' }}>
           {/* Left */}
           <div className="about-col-l">
             {/* Photo placeholder */}
-            <div style={{ width: '100%', maxWidth: 340, aspectRatio: '4/5', borderRadius: 20, border: '1px solid var(--border)', background: 'linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem', position: 'relative', overflow: 'hidden', boxShadow: 'var(--card-shadow)' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '60%', background: 'radial-gradient(ellipse at 50% 0%, var(--accent-glow) 0%, transparent 70%)', opacity: 0.4 }} />
-              <svg width="56" height="56" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" strokeWidth={0.8} style={{ opacity: 0.3 }}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.65rem', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>foto.jpg</p>
+            <div style={{ 
+              width: '100%', 
+              maxWidth: 340,        // ← diperkecil dari 340
+              aspectRatio: '3/4',   // ← lebih compact dari 4/5
+              borderRadius: 16, 
+              border: '1px solid var(--border)', 
+              overflow: 'hidden',
+              boxShadow: 'var(--card-shadow)',
+              flexShrink: 0,
+              margin: '0 auto'
+            }}>
+              <img 
+                src={SITE_CONFIG.assets.photo}    // ← sesuaikan nama file aslimu
+                alt="Yudistio"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
 
             {/* Meta grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }}>
+            {/* <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }}>
               {meta.map((item) => (
                 <div key={item.label} className="card" style={{ padding: '0.85rem 1rem' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.3rem' }}>{item.label}</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text)', fontWeight: 500, wordBreak: 'break-all', lineHeight: 1.4 }}>{item.value}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right */}

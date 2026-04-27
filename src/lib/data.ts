@@ -70,22 +70,22 @@ export const EXPERIENCE = [
     descriptionId: 'Memimpin pengembangan portal aplikasi (React + Laravel + Node.js + PostgreSQL) dan portal Tableau (Laravel + PostgreSQL). Kontribusi ~80% pada kedua proyek beserta website CSIRT berbasis WordPress.',
     technologies: ['React', 'Laravel', 'Node.js', 'PostgreSQL', 'WordPress'],
   },
-  {
-    id: 'freelance', period: '2024 – Present',
-    roleEn: 'Freelance Web Developer', roleId: 'Freelance Web Developer',
-    organization: 'Self-Employed',
-    descriptionEn: 'Building custom web solutions for various clients using modern stacks. Focus on Laravel backends, React frontends, and REST API integrations.',
-    descriptionId: 'Membangun solusi web kustom untuk berbagai klien menggunakan stack modern. Fokus pada backend Laravel, frontend React, dan integrasi REST API.',
-    technologies: ['Laravel', 'React', 'Next.js', 'MySQL', 'REST API'],
-  },
-  {
-    id: 'unsika', period: '2021 – 2026',
-    roleEn: 'Informatics Student (Final Year)', roleId: 'Mahasiswa Informatika (Tingkat Akhir)',
-    organization: 'Universitas Singaperbangsa Karawang (UNSIKA)',
-    descriptionEn: 'Completing thesis on a web-based boarding house management system built with Laravel using the Prototyping methodology.',
-    descriptionId: 'Menyelesaikan skripsi tentang sistem informasi manajemen kos berbasis web dibangun dengan Laravel menggunakan metode Prototyping.',
-    technologies: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
-  },
+  // {
+  //   id: 'freelance', period: '2024 – Present',
+  //   roleEn: 'Freelance Web Developer', roleId: 'Freelance Web Developer',
+  //   organization: 'Self-Employed',
+  //   descriptionEn: 'Building custom web solutions for various clients using modern stacks. Focus on Laravel backends, React frontends, and REST API integrations.',
+  //   descriptionId: 'Membangun solusi web kustom untuk berbagai klien menggunakan stack modern. Fokus pada backend Laravel, frontend React, dan integrasi REST API.',
+  //   technologies: ['Laravel', 'React', 'Next.js', 'MySQL', 'REST API'],
+  // },
+  // {
+  //   id: 'unsika', period: '2021 – 2026',
+  //   roleEn: 'Informatics Student (Final Year)', roleId: 'Mahasiswa Informatika (Tingkat Akhir)',
+  //   organization: 'Universitas Singaperbangsa Karawang (UNSIKA)',
+  //   descriptionEn: 'Completing thesis on a web-based boarding house management system built with Laravel using the Prototyping methodology.',
+  //   descriptionId: 'Menyelesaikan skripsi tentang sistem informasi manajemen kos berbasis web dibangun dengan Laravel menggunakan metode Prototyping.',
+  //   technologies: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
+  // },
 ] as const;
 
 // ─── PROJECTS ─────────────────────────────────────────────────────────────────
