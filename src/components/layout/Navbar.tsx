@@ -109,7 +109,7 @@ export function Navbar() {
         <a
           href="#hero"
           onClick={(e) => { e.preventDefault(); scrollTo('#hero'); }}
-          style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 800, color: 'var(--text)', textDecoration: 'none', letterSpacing: '-0.02em' }}
+          style={{ flex: 1, display: 'flex', justifyContent: 'flex-start', fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 800, color: 'var(--text)', textDecoration: 'none', letterSpacing: '-0.02em' }}
         >
           Y<span style={{ color: 'var(--accent)' }}>.</span>
         </a>
@@ -137,7 +137,7 @@ export function Navbar() {
         </div>
 
         {/* Right Controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }} className="hidden-mobile">
+        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '0.5rem' }} className="hidden-mobile">
           {/* Lang toggle */}
           <button
             onClick={() => setLang(lang === 'en' ? 'id' : 'en')}
