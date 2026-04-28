@@ -88,26 +88,7 @@ export function Footer() {
 
         {/* Name + tagline */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <h2 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.6rem, 4vw, 2.5rem)',
-            fontWeight: 800,
-            letterSpacing: '-0.04em',
-            color: 'var(--text)',
-            marginBottom: '0.5rem',
-          }}>
-            {SITE_CONFIG.personal.shortName}
-            <span style={{ color: 'var(--accent)' }}>.</span>
-          </h2>
-          <p style={{
-            fontSize: '0.82rem',
-            color: 'var(--text-muted)',
-            fontFamily: 'var(--font-mono)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-          }}>
-            {SITE_CONFIG.personal.title}
-          </p>
+          <img src="/longicon.svg" alt={SITE_CONFIG.personal.shortName} style={{ height: 'clamp(12rem, 4vw, 24rem)', width: 'auto', marginBottom: '0.5rem', display: 'block', margin: '0 auto 0.5rem' }} />
         </div>
 
         {/* Status badge */}
@@ -127,7 +108,7 @@ export function Footer() {
         </div> */}
 
         {/* Resume CTAs */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+        {/* <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
             <a
             href={SITE_CONFIG.assets.cv}
             target="_blank"
@@ -179,7 +160,7 @@ export function Footer() {
             <DownloadSVG />
             {t.nav.downloadResume}
           </a>
-        </div>
+        </div> */}
 
         {/* Divider */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', maxWidth: 320, margin: '0 auto 2.5rem' }}>
