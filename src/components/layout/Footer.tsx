@@ -29,7 +29,7 @@ const ViewSVG = () => (
 );
 
 export function Footer() {
-  const { t, lang } = useApp();
+  const { t, lang, theme } = useApp();
 
   const socials = [
     { href: `mailto:${SITE_CONFIG.personal.email}`, icon: <EmailSVG />, label: 'Email' },
@@ -88,7 +88,7 @@ export function Footer() {
 
         {/* Name + tagline */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <img src="/longicon.svg" alt={SITE_CONFIG.personal.shortName} style={{ height: 'clamp(12rem, 4vw, 24rem)', width: 'auto', marginBottom: '0.5rem', display: 'block', margin: '0 auto 0.5rem' }} />
+          <img src={theme === 'dark' ? '/longicon_dark.svg' : '/longicon.svg'} alt={SITE_CONFIG.personal.shortName} style={{ height: 'clamp(12rem, 4vw, 24rem)', width: 'auto', marginBottom: '0.5rem', display: 'block', margin: '0 auto 0.5rem' }} />
         </div>
 
         {/* Status badge */}

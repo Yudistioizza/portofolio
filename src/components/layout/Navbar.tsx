@@ -111,7 +111,7 @@ export function Navbar() {
           onClick={(e) => { e.preventDefault(); scrollTo('#hero'); }}
           style={{ flex: 1, display: 'flex', justifyContent: 'flex-start', textDecoration: 'none' }}
         >
-          <img src="/favicon.svg" alt="Logo" style={{ height: 32, width: 'auto' }} />
+          <img src={theme === 'dark' ? '/favicon_dark.svg' : '/favicon.svg'} alt="Logo" style={{ height: 32, width: 'auto' }} />
         </a>
 
         {/* Desktop Links */}
