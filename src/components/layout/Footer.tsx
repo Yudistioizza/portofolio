@@ -1,5 +1,6 @@
 import { SITE_CONFIG } from '@/lib/data';
 import { useApp } from '@/lib/context';
+import { asset } from '@/lib/asset';
 
 const EmailSVG = () => (
   <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
@@ -88,7 +89,20 @@ export function Footer() {
 
         {/* Name + tagline */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <img src={theme === 'dark' ? '/longicon_dark.svg' : '/longicon.svg'} alt={SITE_CONFIG.personal.shortName} style={{ height: 'clamp(12rem, 4vw, 24rem)', width: 'auto', marginBottom: '0.5rem', display: 'block', margin: '0 auto 0.5rem' }} />
+          <img 
+            src={theme === 'dark' 
+              ? asset('/longicon_dark.svg') 
+              : asset('/longicon.svg')
+            } 
+            alt={SITE_CONFIG.personal.shortName}
+            style={{ 
+              height: 'clamp(12rem, 4vw, 24rem)', 
+              width: 'auto', 
+              marginBottom: '0.5rem', 
+              display: 'block', 
+              margin: '0 auto 0.5rem' 
+            }} 
+          />
         </div>
 
         {/* Status badge */}

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useApp } from '@/lib/context';
 import { SITE_CONFIG } from '@/lib/data';
+import { asset } from '@/lib/asset';
 
 function SunIcon() {
   return (
@@ -111,7 +112,15 @@ export function Navbar() {
           onClick={(e) => { e.preventDefault(); scrollTo('#hero'); }}
           style={{ flex: 1, display: 'flex', justifyContent: 'flex-start', textDecoration: 'none' }}
         >
-          <img src={theme === 'dark' ? '/favicon_dark.svg' : '/favicon.svg'} alt="Logo" style={{ height: 32, width: 'auto' }} />
+          <img
+            src={
+              theme === 'dark'
+                ? asset('/favicon_dark.svg')
+                : asset('/favicon.svg')
+            }
+            alt="Logo"
+            style={{ height: 32, width: 'auto' }}
+          />
         </a>
 
         {/* Desktop Links */}

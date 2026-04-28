@@ -1,4 +1,6 @@
 // ─── SITE CONFIG ─────────────────────────────────────────────────────────────
+import { asset } from './asset';
+
 export const SITE_CONFIG = {
   personal: {
     name: 'Yudistio Izza Al Farisi',
@@ -14,8 +16,8 @@ export const SITE_CONFIG = {
     github: 'https://github.com/Yudistioizza',
   },
   assets: {
-    photo: '/foto.jpeg',
-    cv: '/Yudistio Izza Al Farisi_CV.pdf',
+    photo: asset('/foto.jpeg'),
+    cv: asset('/CV-Yudistio-Izza-Al-Farisi.pdf'),
   },
   status: { available: true, lookingFor: ['Full-Stack Developer', 'Backend Developer', 'Web Developer'] },
 } as const;
