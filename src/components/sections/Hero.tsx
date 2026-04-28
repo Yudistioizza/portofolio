@@ -5,9 +5,10 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import { SITE_CONFIG, STATS } from '@/lib/data';
 import { useApp } from '@/lib/context';
+import { asset } from '@/lib/asset';
 
 // ─── Asset paths (taruh di /public) ──────────────────────────────────────────
-const BG_GIF = '/animation.gif'; // dipakai untuk desktop & mobile
+const BG_GIF = asset('/animation.gif'); // dipakai untuk desktop & mobile
 
 // ─── Hooks ───────────────────────────────────────────────────────────────────
 
