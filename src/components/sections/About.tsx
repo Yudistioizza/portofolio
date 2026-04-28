@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SITE_CONFIG, EXPERIENCE } from '@/lib/data';
@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const { t, lang } = useApp();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -18,6 +19,13 @@ export function About() {
       gsap.from('.tl-item', { scrollTrigger: { trigger: '.tl-wrap', start: 'top 82%' }, x: -30, opacity: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out' });
     }, sectionRef);
     return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
   }, []);
 
   const meta = [
@@ -37,13 +45,13 @@ export function About() {
           </h2>
         </div>
 
-        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '1rem', alignItems: 'start' }}>
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '280px 1fr',  gap: '2rem', alignItems: 'start' }}>
           {/* Left */}
           <div className="about-col-l">
             {/* Photo placeholder */}
             <div style={{ 
               width: '100%', 
-              maxWidth: 340,        // ← diperkecil dari 340
+              maxWidth: isMobile ? 150 : 340,        // ← diperkecil dari 340
               aspectRatio: '3/4',   // ← lebih compact dari 4/5
               borderRadius: 16, 
               border: '1px solid var(--border)', 
