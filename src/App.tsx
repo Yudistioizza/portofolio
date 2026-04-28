@@ -41,7 +41,7 @@ function PortfolioApp() {
         <Projects />
         <Skills />
         {/* <Leadership /> */}
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <Footer />
     </>

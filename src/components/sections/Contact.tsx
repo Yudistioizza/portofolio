@@ -47,7 +47,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="section-pad" style={{ background: 'var(--bg-alt)' }}>
+    <section ref={sectionRef} className="section-pad" style={{ background: 'var(--bg-alt)' }}>
       <div className="container-main">
         {/* CTA block */}
         <div className="cta-block" style={{ maxWidth: 680, margin: '0 auto 4rem', textAlign: 'center' }}>
@@ -58,14 +58,14 @@ export function Contact() {
             {t.contact.title}{' '}
             <span className="text-gradient">{t.contact.titleAccent}</span>
           </h2>
-          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, fontSize: '0.95rem', maxWidth: 500, margin: '0 auto 2rem' }}>
+          {/* <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, fontSize: '0.95rem', maxWidth: 500, margin: '0 auto 2rem' }}>
             {t.contact.subtitle}{' '}
             <span style={{ color: 'var(--accent)', fontWeight: 600 }}>{t.contact.subtitleAccent}</span>
             {t.contact.subtitleEnd}
-          </p>
+          </p> */}
 
           {/* Availability badge */}
-          {SITE_CONFIG.status.available && (
+          {/* {SITE_CONFIG.status.available && (
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.65rem 1.5rem', borderRadius: 9999, background: 'var(--accent-light)', border: '1px solid color-mix(in srgb, var(--accent) 30%, transparent)', marginBottom: '0.5rem' }}>
               <span className="pulse-dot" style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block', flexShrink: 0 }} />
               <span style={{ fontWeight: 600, fontSize: '0.82rem', color: 'var(--accent)' }}>{t.contact.available}</span>
@@ -73,7 +73,7 @@ export function Contact() {
           )}
           <p style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', letterSpacing: '0.08em', marginTop: '0.5rem' }}>
             {t.contact.lookingFor} {SITE_CONFIG.status.lookingFor.join(' · ')}
-          </p>
+          </p> */}
         </div>
 
         {/* Contact links */}
