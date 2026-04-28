@@ -45,7 +45,7 @@ const NAV_LINKS = (t: any) => [
   { href: '#about',      label: t.nav.about },
   { href: '#projects',   label: t.nav.projects },
   { href: '#skills',     label: t.nav.skills },
-  { href: '#leadership', label: t.nav.leadership },
+  // { href: '#leadership', label: t.nav.leadership },
   { href: '#contact',    label: t.nav.contact },
 ];
 

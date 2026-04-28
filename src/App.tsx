@@ -40,7 +40,7 @@ function PortfolioApp() {
         <About />
         <Projects />
         <Skills />
-        <Leadership />
+        {/* <Leadership /> */}
         <Contact />
       </main>
       <Footer />
