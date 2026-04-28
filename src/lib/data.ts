@@ -29,7 +29,7 @@ export const TRANSLATIONS = {
       bio1: "I'm a backend-focused fullstack developer with a passion for building scalable web systems. My experience spans enterprise applications at state-owned companies to freelance projects.",
       bio2: "Currently completing my Informatics degree at UNSIKA while actively learning to integrate AI capabilities into modern web applications. Strong leadership background across academic and community organizations." },
     projects: { eyebrow: 'My Work', title: 'Projects', featured: 'Featured', allProjects: 'All Projects' },
-    skills: { eyebrow: 'Technical Expertise', title: 'Skills & Technologies', subtitle: 'I CONSTANTLY TRY TO', subtitleBold: 'IMPROVE' },
+    skills: { eyebrow: 'Technical Expertise', title: 'Skills & Technologies', subtitle: 'I CONSTANTLY TRY TO', subtitleBold: ['IMPROVE', 'LEARN', 'ADAPT'] },
     leadership: { eyebrow: 'Experience & Achievements', title: 'Leadership &', titleAccent: 'Certifications', rolesTitle: 'Leadership Experience', certsTitle: 'Professional Certifications' },
     contact: { eyebrow: 'Get In Touch', title: "Let's Build Something", titleAccent: 'Great Together', subtitle: "I'm currently", subtitleAccent: 'open to new opportunities', subtitleEnd: '. Whether you have a project in mind or just want to connect, feel free to reach out!', available: 'Available for Work', lookingFor: 'Looking for:' },
     footer: { copyright: '©', rights: 'All rights reserved.', builtWith: 'Built with' },
@@ -42,7 +42,7 @@ export const TRANSLATIONS = {
       bio1: "Saya adalah fullstack developer yang fokus pada backend dengan semangat membangun sistem web yang skalabel. Pengalaman saya mencakup aplikasi enterprise di perusahaan BUMN hingga proyek freelance.",
       bio2: "Sedang menyelesaikan gelar Informatika di UNSIKA sembari aktif mempelajari integrasi AI ke dalam aplikasi web modern. Memiliki latar belakang kepemimpinan yang kuat di berbagai organisasi akademik dan komunitas." },
     projects: { eyebrow: 'Karya Saya', title: 'Proyek', featured: 'Unggulan', allProjects: 'Semua Proyek' },
-    skills: { eyebrow: 'Keahlian Teknis', title: 'Keahlian & Teknologi', subtitle: 'SAYA TERUS BERUSAHA UNTUK', subtitleBold: 'BERKEMBANG' },
+    skills: { eyebrow: 'Keahlian Teknis', title: 'Keahlian & Teknologi', subtitle: 'SAYA TERUS BERUSAHA UNTUK', subtitleBold: ['BERKEMBANG', 'BELAJAR', 'BERADAPTASI'] },
     leadership: { eyebrow: 'Pengalaman & Pencapaian', title: 'Kepemimpinan &', titleAccent: 'Sertifikasi', rolesTitle: 'Pengalaman Kepemimpinan', certsTitle: 'Sertifikasi Profesional' },
     contact: { eyebrow: 'Hubungi Saya', title: 'Mari Membangun Sesuatu yang', titleAccent: 'Luar Biasa Bersama', subtitle: 'Saya sedang', subtitleAccent: 'terbuka untuk peluang baru', subtitleEnd: '. Apakah Anda memiliki proyek atau hanya ingin terhubung, jangan ragu untuk menghubungi saya!', available: 'Tersedia untuk Bekerja', lookingFor: 'Mencari:' },
     footer: { copyright: '©', rights: 'Hak cipta dilindungi.', builtWith: 'Dibuat dengan' },
@@ -190,27 +190,19 @@ export const SKILLS_LIST = [
   { name: 'Tailwind CSS',icon: '💨' },
   { name: 'MySQL',       icon: '🗄️' },
   { name: 'PostgreSQL',  icon: '🐘' },
-  { name: 'SQL Server',  icon: '📊' },
   { name: 'REST API',    icon: '🔗' },
-  { name: 'Git',         icon: '📦' },
   { name: 'GitHub',      icon: '🐙' },
   { name: 'JWT',         icon: '🔐' },
-  { name: 'Docker',      icon: '🐳' },
   { name: 'Ubuntu',      icon: '🐧' },
   { name: 'Vite',        icon: '⚡' },
-  { name: 'CodeIgniter', icon: '🔥' },
   { name: 'WordPress',   icon: '📝' },
-  { name: 'Three.js',    icon: '🌐' },
-  { name: 'GSAP',        icon: '🎬' },
-  { name: 'Figma',       icon: '🎨' },
-  { name: 'Claude API',  icon: '🤖' },
 ] as const;
 
 export const TECH_MARQUEE = [
   'Laravel', '✦', 'React', '✦', 'Node.js', '✦', 'PostgreSQL', '✦',
-  'TypeScript', '✦', 'Three.js', '✦', 'GSAP', '✦', 'Vite', '✦',
+  'TypeScript', '✦', 'Vite', '✦',
   'MySQL', '✦', 'REST API', '✦', 'Next.js', '✦', 'PHP', '✦',
-  'JWT', '✦', 'Tailwind CSS', '✦', 'Docker', '✦', 'Ubuntu',
+  'JWT', '✦', 'Tailwind CSS', '✦',
 ];
 
 // ─── LEADERSHIP ───────────────────────────────────────────────────────────────

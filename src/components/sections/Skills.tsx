@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState  } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SKILLS_LIST, TECH_MARQUEE } from '@/lib/data';
@@ -7,33 +7,25 @@ import { useApp } from '@/lib/context';
 gsap.registerPlugin(ScrollTrigger);
 
 // SVG icons for skill pills - using devicons-style inline SVGs or emoji fallback
-const ICON_MAP: Record<string, string> = {
-  'PHP':          '🐘',
-  'Laravel':      '🔴',
-  'JavaScript':   '🟡',
-  'TypeScript':   '🔷',
-  'React':        '⚛️',
-  'Next.js':      '▲',
-  'Node.js':      '🟩',
-  'HTML5':        '🟠',
-  'CSS3':         '🔵',
-  'Tailwind CSS': '💨',
-  'MySQL':        '🗄️',
-  'PostgreSQL':   '🐘',
-  'SQL Server':   '📊',
-  'REST API':     '🔗',
-  'Git':          '📦',
-  'GitHub':       '🐙',
-  'JWT':          '🔐',
-  'Docker':       '🐳',
-  'Ubuntu':       '🐧',
-  'Vite':         '⚡',
-  'CodeIgniter':  '🔥',
-  'WordPress':    '📝',
-  'Three.js':     '🌐',
-  'GSAP':         '🎬',
-  'Figma':        '🎨',
-  'Claude API':   '🤖',
+const DEVICON_MAP: Record<string, string> = {
+  'PHP':          'php',
+  'Laravel':      'laravel',
+  'JavaScript':   'javascript',
+  'TypeScript':   'typescript',
+  'React':        'react',
+  'Next.js':      'nextjs',
+  'Node.js':      'nodejs',
+  'HTML5':        'html5',
+  'CSS3':         'css3',
+  'Tailwind CSS': 'tailwindcss',
+  'MySQL':        'mysql',
+  'PostgreSQL':   'postgresql',
+  'REST API':     'fastapi',       // placeholder — tidak ada icon REST API resmi
+  'GitHub':       'github',
+  'JWT':          'javascript',    // placeholder
+  'Ubuntu':       'ubuntu',
+  'Vite':         'vite',
+  'WordPress':    'wordpress',
 };
 
 export function Skills() {
@@ -54,6 +46,24 @@ export function Skills() {
     }, sectionRef);
     return () => ctx.revert();
   }, []);
+
+  const words = Array.isArray(t.skills.subtitleBold) 
+    ? t.skills.subtitleBold 
+    : [t.skills.subtitleBold];
+  const [wordIdx, setWordIdx] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (words.length <= 1) return;
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setWordIdx((i) => (i + 1) % words.length);
+        setVisible(true);
+      }, 300); // fade out 300ms lalu ganti kata
+    }, 2000); // ganti setiap 2 detik
+    return () => clearInterval(interval);
+  }, [words.length]);
 
   return (
     <section id="skills" ref={sectionRef} className="section-pad" style={{ background: 'var(--bg)' }}>
@@ -88,7 +98,7 @@ export function Skills() {
           </div>
         </div>
 
-        {/* Subtitle line — "I CONSTANTLY TRY TO IMPROVE" */}
+        {/* Subtitle line */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '1.25rem' }}>
             <div style={{ flex: 1, height: 1, width: '3rem', background: 'var(--border)' }} />
@@ -96,7 +106,18 @@ export function Skills() {
               fontFamily: 'var(--font-mono)', fontSize: 'clamp(0.7rem, 1.5vw, 0.9rem)',
               letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-secondary)',
             }}>
-              {t.skills.subtitle} <span style={{ color: 'var(--accent)', fontWeight: 700 }}>{t.skills.subtitleBold}</span>
+              {t.skills.subtitle}{' '}
+              <span style={{
+                color: 'var(--accent)',
+                fontWeight: 700,
+                display: 'inline-block',
+                minWidth: '8ch',           // ← cegah layout shift saat kata berganti
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(-6px)',
+                transition: 'opacity 0.3s ease, transform 0.3s ease',
+              }}>
+                {words[wordIdx]}
+              </span>
             </span>
             <div style={{ flex: 1, height: 1, width: '3rem', background: 'var(--border)' }} />
           </div>
@@ -107,12 +128,29 @@ export function Skills() {
           className="pills-wrap"
           style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem', justifyContent: 'center', maxWidth: 860, margin: '0 auto 4rem' }}
         >
-          {SKILLS_LIST.map((skill) => (
-            <div key={skill.name} className="skill-pill">
-              <span style={{ fontSize: '1rem', lineHeight: 1, flexShrink: 0 }}>{ICON_MAP[skill.name] ?? '⚙️'}</span>
-              <span>{skill.name}</span>
-            </div>
-          ))}
+          {SKILLS_LIST.map((skill) => {
+            const slug = DEVICON_MAP[skill.name];
+            return (
+              <div key={skill.name} className="skill-pill">
+                {slug ? (
+                  <img
+                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`}
+                    alt={skill.name}
+                    width={18}
+                    height={18}
+                    style={{ flexShrink: 0, objectFit: 'contain' }}
+                    onError={(e) => {
+                      // fallback ke plain icon jika slug tidak tersedia
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <span style={{ fontSize: '1rem', lineHeight: 1, flexShrink: 0 }}>⚙️</span>
+                )}
+                <span>{skill.name}</span>
+              </div>
+            );
+          })}
         </div>
 
         {/* Marquee */}
