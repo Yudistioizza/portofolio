@@ -104,30 +104,30 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  {
-    id: 'minid-portal',
-    title: 'Portal Aplikasi MIND ID',
-    organization: 'PT. Mineral Industri Indonesia',
-    descriptionEn: 'Enterprise internal portal aggregating multiple applications for state-owned mining company. Built with React frontend, Laravel REST API, Node.js microservices, and PostgreSQL.',
-    descriptionId: 'Portal internal enterprise yang mengagregasi beberapa aplikasi untuk perusahaan pertambangan BUMN. Dibangun dengan frontend React, REST API Laravel, microservices Node.js, dan PostgreSQL.',
-    technologies: ['React', 'Laravel', 'Node.js', 'PostgreSQL', 'REST API', 'RBAC'],
-    featured: true,
-    image: '/images/project-portal.jpg', // replace with actual image
-    year: '2025',
-    status: 'completed',
-  },
-  {
-    id: 'minid-tableau',
-    title: 'Portal Tableau MIND ID',
-    organization: 'PT. Mineral Industri Indonesia',
-    descriptionEn: 'Business intelligence dashboard portal for data visualization. Integrates Tableau embeds with Laravel backend and PostgreSQL for data management and user access control.',
-    descriptionId: 'Portal dashboard business intelligence untuk visualisasi data. Mengintegrasikan embed Tableau dengan backend Laravel dan PostgreSQL untuk manajemen data dan kontrol akses pengguna.',
-    technologies: ['Laravel', 'PostgreSQL', 'Tableau', 'JWT', 'RBAC'],
-    featured: true,
-    image: '/images/project-tableau.jpg', // replace with actual image
-    year: '2024',
-    status: 'completed',
-  },
+  // {
+  //   id: 'minid-portal',
+  //   title: 'Portal Aplikasi MIND ID',
+  //   organization: 'PT. Mineral Industri Indonesia',
+  //   descriptionEn: 'Enterprise internal portal aggregating multiple applications for state-owned mining company. Built with React frontend, Laravel REST API, Node.js microservices, and PostgreSQL.',
+  //   descriptionId: 'Portal internal enterprise yang mengagregasi beberapa aplikasi untuk perusahaan pertambangan BUMN. Dibangun dengan frontend React, REST API Laravel, microservices Node.js, dan PostgreSQL.',
+  //   technologies: ['React', 'Laravel', 'Node.js', 'PostgreSQL', 'REST API', 'RBAC'],
+  //   featured: true,
+  //   image: '/images/project-portal.jpg', // replace with actual image
+  //   year: '2025',
+  //   status: 'completed',
+  // },
+  // {
+  //   id: 'minid-tableau',
+  //   title: 'Portal Tableau MIND ID',
+  //   organization: 'PT. Mineral Industri Indonesia',
+  //   descriptionEn: 'Business intelligence dashboard portal for data visualization. Integrates Tableau embeds with Laravel backend and PostgreSQL for data management and user access control.',
+  //   descriptionId: 'Portal dashboard business intelligence untuk visualisasi data. Mengintegrasikan embed Tableau dengan backend Laravel dan PostgreSQL untuk manajemen data dan kontrol akses pengguna.',
+  //   technologies: ['Laravel', 'PostgreSQL', 'Tableau', 'JWT', 'RBAC'],
+  //   featured: true,
+  //   image: '/images/project-tableau.jpg', // replace with actual image
+  //   year: '2024',
+  //   status: 'completed',
+  // },
   {
     id: 'boarding-thesis',
     title: 'Boarding House Management System',
@@ -160,17 +160,6 @@ export const PROJECTS: Project[] = [
     featured: false,
     year: '2024',
     status: 'completed',
-  },
-  {
-    id: 'ai-integration',
-    title: 'AI-Powered Web Assistant',
-    organization: 'Personal Project',
-    descriptionEn: 'Experimental project integrating Claude/OpenAI APIs into a Laravel + React web application with agentic workflows and intelligent content generation.',
-    descriptionId: 'Proyek eksperimental yang mengintegrasikan API Claude/OpenAI ke dalam aplikasi web Laravel + React dengan alur kerja agentik dan pembuatan konten cerdas.',
-    technologies: ['Laravel', 'React', 'OpenAI API', 'PostgreSQL', 'Vite'],
-    featured: false,
-    year: '2025',
-    status: 'wip',
   },
 ];
 
